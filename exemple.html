@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+		<meta charset="UTF-8">
+		<title>Ajax</title>
+</head>
+	<body>
+		Contenu initial. 
+	</body>
+	<script>
+		var request = new XMLHttpRequest();
+		var url = "contenu.html";
+		request.open("GET",url,true);
+		request.send();
+		request.onreadystatechange = function(){
+			if((request.readyState == 4)&&(request.status == 200))
+				document.body.innerHTML = request.responseText;
+		}
+	</script>
+</html>
